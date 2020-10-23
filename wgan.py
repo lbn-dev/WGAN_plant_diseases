@@ -502,14 +502,7 @@ def reader():
     y_train = np.array([CLASS[l] for l in train_dict['class']])
     X_train = (X_train.astype(np.float32) - 0.5) * 2
     y_train = y_train.reshape(-1, 1)
-    X_train, x_valid, y_train, y_valid = train_test_split(
-        X_train,
-        y_train,
-        shuffle=True,
-        train_size=0.019,
-        random_state=RANDOM_STATE
-    )
-    return X_train, x_valid, y_train, y_valid
+    return X_train, x_valid, 0, 0
 
 
 if __name__ == '__main__':
