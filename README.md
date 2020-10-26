@@ -9,9 +9,9 @@ Experiemnt 2: train CNN with classic data augmentation.
 `  
 Experiemnt 3: train CNN with classic data augmentation and WGAN.  
 `
-              sbatch job_wganWithoutLSR.script  sbatch job_cnn.script  
+              sbatch job_wganWithoutLSR.script  sbatch job_CNN_WGAN.script  
 `  
 Experiemnt 4: train CNN with classic data augmentation and WGAN-LSR.    
 `
-              sbatch job_wgan.script  sbatch job_cnn.script  
+              sbatch job_wgan.script  sbatch job_CNN_WGAN_LSR.script  
 `
