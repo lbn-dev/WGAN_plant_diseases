@@ -7,4 +7,4 @@
 #SBATCH --mem=20G
 #SBATCH --job-name="VGG"
 module load python
-python CNN.py
+python CNN_WGAN.py
