@@ -314,8 +314,6 @@ def reader():
     train_dict = fill_dict(train_path, train_dict)
     return train_dict, test_dict
 
-acgan = DCGAN()
-
 with open('./dataset', 'rb') as f:
     X_train, X_valid, Y_train, Y_valid=pickle.load(f)
 print("original train size",X_train.shape)
