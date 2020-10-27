@@ -1,4 +1,4 @@
-#---------------------------------------------train CNN using classic data augmentation+WGAN without LSR
+#---------------------------------------------train CNN using classic data augmentation+WGAN without LSR-------------------------------------
 from __future__ import print_function, division
 import sklearn as sk
 from keras import backend as K
