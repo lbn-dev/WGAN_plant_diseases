@@ -1,3 +1,4 @@
+#----------------------------------------------------train CNN with classic data augmentation--------------------------------------------
 from __future__ import print_function, division
 import sklearn as sk
 from keras import backend as K
