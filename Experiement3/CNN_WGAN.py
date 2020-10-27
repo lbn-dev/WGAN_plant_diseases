@@ -64,9 +64,9 @@ class DCGAN():
 
         # Build and compile the discriminator
         self.generator = self.build_generator()
-        self.generator.load_weights('/work/smryan/luningbi/saved_model_wgan_nonLSR/generator_weights.hdf5')
+        self.generator.load_weights('generator_weights.hdf5')
         self.critic = self.build_critic()
-        self.critic.load_weights('/work/smryan/luningbi/saved_model_wgan_nonLSR/discriminator_weights.hdf5')
+        self.critic.load_weights('discriminator_weights.hdf5')
         self.generator.trainable = False
         real_img = Input(shape=self.img_shape)
 
@@ -228,13 +228,13 @@ class DCGAN():
                 ax.imshow(im)
                 ax.axis('off')
                 cnt += 1
-        fig.savefig("/work/smryan/luningbi/images_dcgan/%d.png" % epoch)
+        fig.savefig("%d.png" % epoch)
         plt.close()
 
     def save_model(self):
         def save(model, model_name):
-            model_path = "/work/smryan/luningbi/saved_model_wgan/%s.json" % model_name
-            weights_path = "/work/smryan/luningbi/saved_model_wgan/%s_weights.hdf5" % model_name
+            model_path = "%s.json" % model_name
+            weights_path = "%s_weights.hdf5" % model_name
             options = {"file_arch": model_path,
                        "file_weight": weights_path}
             json_string = model.to_json()
@@ -395,7 +395,7 @@ def get_callbacks(filepath, patience=5):
 
 
 def train_model(img, target,a,b,c,d):
-    #callbacks = get_callbacks(filepath='D:/2ndPlant/kaggle_seedling_classification/model_weight_SGD.hdf5', patience=6)
+
 
     gmodel = get_model()
     if d!=0:
@@ -527,7 +527,7 @@ def reader():
 
 acgan = DCGAN()
 
-with open('/work/smryan/luningbi/image_128.pickle', 'rb') as f:
+with open('image_128.pickle', 'rb') as f:
     X_train, X_valid, Y_train, Y_valid=pickle.load(f)
 print("original train size",X_train.shape)
 r, c = 200, 38
@@ -565,7 +565,7 @@ for i in range(14):
     #test_model(X_test, label)
 
 g_final_model = get_model()
-g_final_model.load_weights('/work/smryan/luningbi/wgan_weights.h5')
+g_final_model.load_weights('wgan_weights.h5')
 y_pred=(g_final_model.predict(X_valid)).argmax(axis=-1)
 result=sk.metrics.confusion_matrix(Y_valid,y_pred)
 
