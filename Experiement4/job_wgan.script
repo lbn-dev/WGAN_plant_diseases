@@ -9,4 +9,4 @@
 
 
 module load python
-python wgan2.py --epochs 50000 --batch 100 --interval 100 --img 128 --noise 1000 --var1 0.22
+python wgan.py --epochs 50000 --batch 100 --interval 100 --img 128 --noise 1000 --var1 0.22
