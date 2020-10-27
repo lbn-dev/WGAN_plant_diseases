@@ -234,7 +234,7 @@ class DCGAN():
                 noise = np.random.normal(0, 1, (batch_size, self.latent_dim))
                 sampled_labels =img_labels
                 fake_labels = self.num_classes * np.ones(img_labels.shape)
-            d_loss = self.critic_model.train_on_batch([imgs, noise, sampled_labels],
+                d_loss = self.critic_model.train_on_batch([imgs, noise, sampled_labels],
                                                       [valid, fake, dummy, sampled_labels,fake_labels])
             g_loss = self.generator_model.train_on_batch([noise,sampled_labels], [valid,sampled_labels])
             d_list.append(d_loss)
